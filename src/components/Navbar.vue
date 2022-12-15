@@ -1,37 +1,43 @@
 <template>
   <div>
+    <!-- DRAWER -->
     <v-navigation-drawer
-                v-model="drawer"
-                app
-                absolute
-                :style="`margin-top: ${$vuetify.application.top}px`"
-                color="orange lighten-2"
-                height="50%"
-                width="100%"
+        v-model="drawer"
+        app
+        absolute
+        temporary
+        overlay-opacity="0"
+        :style="`margin-top: ${$vuetify.application.top}px`"
+        color="amber darken-3"
+        height="50%"
+        width="100%"
+    >
+        <v-list nav dark>
+            <v-list-item-group
+                v-model="group"
             >
-                <v-list nav dark>
-                    <v-list-item-group
-                        v-model="group"
+                <v-list-item
+                    v-for="route in routes"
+                    :key="route.name"
+                    :to="route.path"
+                    :disabled="currentRoute == route.name"
+                    active-class="amber darken-4"
+                >
+                    <v-list-item-title
+                        class="font-weight-light  text-center text-h6 text-uppercase"
                     >
-                        <v-list-item
-                            v-for="route in routes"
-                            :key="route.name"
-                            :to="route.path"
-                        >
-                            <v-list-item-title
-                                class="font-weight-light  text-center text-h6 text-uppercase"
-                            >
-                                {{route.title}}
-                            </v-list-item-title>
-                            
-                        </v-list-item>
-                        
-                    </v-list-item-group>
-                </v-list>
-            </v-navigation-drawer>
+                        {{route.title}}
+                    </v-list-item-title>
+                    
+                </v-list-item>
+                
+            </v-list-item-group>
+        </v-list>
+    </v-navigation-drawer>
+    <!-- APP BAR         -->
     <v-app-bar
         app
-        color="amber darken-4"
+        color="amber darken-3"
         dark
     >
         <v-toolbar-title
@@ -41,12 +47,26 @@
         </v-toolbar-title>
 
         <v-spacer></v-spacer>
+        
+        <v-toolbar-items
+            v-for="route in routes"
+            :key="route.name"
+            class="d-none d-lg-flex"
+        >
+            <v-btn
+                text
+                :disabled="currentRoute == route.name"
+                :to="route.path"
+                class="p-2"
+            >
+                {{route.title}}
+            </v-btn>
+        </v-toolbar-items>
 
         <v-app-bar-nav-icon
-            @click="drawer =!drawer"
+            @click.stop="drawer =!drawer"
+            class="d-lg-none d-xl-flex"
         ></v-app-bar-nav-icon>
-
-        <!-- navigation drawer -->
 
     </v-app-bar>
      
@@ -61,6 +81,7 @@ export default {
     data(){
         return{
             drawer: true,
+            group: null,
             routes:[
                 { name:'Home', path: '/',title:'Home'},
                 { name:'Productos', path: '/productos',title:'Equipos y accesorios'},
@@ -69,6 +90,16 @@ export default {
                 { name:'Oficina', path: '/oficina', title:'Oficina Virtual'},
 
             ]
+        }
+    },
+    watch:{
+        group () {
+        this.drawer = false
+      },
+    },
+    computed:{
+        currentRoute(){
+            return this.$route.name
         }
     }
 }
