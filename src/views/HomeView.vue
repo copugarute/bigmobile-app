@@ -1,12 +1,13 @@
 <template>
   <v-container 
     fluid
-    class="pa-0 amber darken-3"
+    class=" amber darken-3"
   >
   <v-row justify="center">
+<!-- VITRINA -->
     <v-col
       cols="12"
-      class="">
+      class="pa-0">
       <vitrina/>
     </v-col>
     <h1 
@@ -14,11 +15,11 @@
     >
       Planes Flexibles
     </h1>
+<!-- PLANES -->
     <v-col
       v-for="(plan,index) in planes" 
       :key="index"
       cols="12"
-      class=""
     >
       
       <planes-home :plan="plan" />
@@ -28,11 +29,11 @@
     >
       Que dicen de Nosotros
     </h1>
+<!-- RESEÑA -->
     <v-col
       v-for="(opinion,index) in opiniones"
       :key="index"
       cols="12"
-      class=""
     >
       <opiniones-card :opinion="opinion"/>
     </v-col>
