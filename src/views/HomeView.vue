@@ -16,20 +16,26 @@
       Planes Flexibles
     </h1>
 <!-- PLANES -->
-    <v-col
+    <!-- <v-col
       v-for="(plan,index) in planes" 
       :key="index"
       cols="12"
     >
       
       <planes-home :plan="plan" />
+    </v-col> -->
+    <v-col
+      cols="12"
+    >
+      <planes-home :planes="planes" />
     </v-col>
+  <!-- RESEÑA -->
     <h1 
       class="text-h4 white--text font-weight-regular mt-10 mb-5"
     >
       Que dicen de Nosotros
     </h1>
-<!-- RESEÑA -->
+
     <v-col
       v-for="(opinion,index) in opiniones"
       :key="index"
