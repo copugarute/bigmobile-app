@@ -4,6 +4,11 @@
             hide-delimiter-background
             dark
         >
+        <h1 
+            class="text-h4 text-center white--text font-weight-regular my-5"
+        >
+            Planes Flexibles
+        </h1>
             <v-carousel-item
                 v-for="(plan,index) in planes" 
                 :key="index"
@@ -43,7 +48,7 @@ export default {
 name:'PlanesHome',
 props:{
     planes:{
-        type:Object,
+        type:Array,
         required: true
     }
 },
