@@ -1,27 +1,15 @@
 <template>
-
-    
-    <v-form 
+    <v-form
+        ref="form" 
         v-model="valid"
+        lazy-validation
     >
         <h2
             class="text-h4 text-center white--text font-weight-regular mt-10 mb-5"
         >
             Contactanos
         </h2>
-        <v-alert
-            dense
-            text
-            dark
-            colored-border
-            type="success"
-            color="orange darken-3"
-            v-show="mensaje"
-        >
-            {{mensaje}}
-        </v-alert>
-        <v-container>
-            
+       
             <v-row>
                 <v-col
                     cols="12"
@@ -30,7 +18,6 @@
                     <v-text-field
                         v-model="firstname"
                         :rules="nameRules"
-                        :counter="10"
                         label="Nombre"
                         required
                         dark
@@ -44,7 +31,6 @@
                     <v-text-field
                         v-model="lastname"
                         :rules="nameRules"
-                        :counter="10"
                         label="Apellido"
                         required
                         dark
@@ -68,13 +54,13 @@
                         outlined
                         block
                         dark
+                        :disabled="!this.valid"
                         @click="enviarForm"
                     >
                         Envíar
                     </v-btn>
                 </v-col>
             </v-row>
-        </v-container>
   </v-form>
 </template>
 
@@ -83,27 +69,37 @@ export default {
     name:'Form-Home',
     data(){
         return{
-            valid: false,
-            mensaje:'',
+            valid: true,
+            success: false,
+            error:false,
             firstname: '',
             lastname: '',
-            nameRules: [
-                v => !!v || 'Name is required',
-                v => v.length <= 10 || 'Name must be less than 10 characters',
-            ],
             email: '',
+            
+            nameRules: [
+                v => !!v || 'Debe rellenar este campo',
+            ],
+            
             emailRules: [
-                v => !!v || 'E-mail is required',
-                v => /.+@.+/.test(v) || 'E-mail must be valid',
+                v => !!v || 'Debe rellenar este campo',
+                v => /.+@.+/.test(v) || 'El email debe ser valido',
             ],
         }
     },
     methods:{
+        validate() {
+            this.$refs.form.validate();
+        },
         enviarForm(){
-            console.log('Enviado')
-            this.mensaje = 'Mensaje enviado lo contactaremos a la brevedad'
+            this.validate
+            if(this.validate()){
 
+                console.log('Enviado')
+                
+            }
+            
         }
+
     }
 
 }

@@ -1,7 +1,10 @@
 <template>
         <v-carousel
-            height="300"
+            height="350"
             hide-delimiter-background
+            :show-arrows="false"
+            cycle
+            interval="4000"
             dark
         >
         <h1 
@@ -9,10 +12,15 @@
         >
             Planes Flexibles
         </h1>
+        <v-carousel-transition
+                group
+            >
             <v-carousel-item
+                class="carousel-item"
                 v-for="(plan,index) in planes" 
                 :key="index"
             >
+            
                 <v-card
                     class="mx-auto my-2 pa-2 text-center rounded-xl"
                     max-width="300"
@@ -36,7 +44,10 @@
                         {{plan.texto}}
                     </v-card-subtitle>
                 </v-card>
+                
             </v-carousel-item>
+        </v-carousel-transition>
+            
                 
         </v-carousel>
             
@@ -58,6 +69,5 @@ props:{
 </script>
 
 <style>
-
 
 </style>

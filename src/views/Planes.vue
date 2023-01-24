@@ -1,7 +1,7 @@
 <template>
-  <v-contaiener>
+  <v-container>
     <h1>Planes</h1>
-  </v-contaiener>
+  </v-container>
 </template>
 
 <script>

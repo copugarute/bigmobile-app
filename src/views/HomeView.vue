@@ -17,18 +17,10 @@
       <planes-home :planes="planes" />
     </v-col>
 <!-- RESEÑA -->
-    <h1 
-      class="text-h4 white--text font-weight-regular mt-10 mb-5"
-    >
-      Que dicen de Nosotros
-    </h1>
-
     <v-col
-      v-for="(opinion,index) in opiniones"
-      :key="index"
       cols="12"
     >
-      <opiniones-card :opinion="opinion"/>
+      <opiniones-card :opiniones="opiniones"/>
     </v-col>
 <!-- CONTACTO -->
     <v-col

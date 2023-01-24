@@ -4,7 +4,7 @@
     <v-navigation-drawer
         v-model="drawer"
         app
-        absolute
+        fixed
         temporary
         overlay-opacity="0"
         :style="`margin-top: ${$vuetify.application.top}px`"
@@ -37,7 +37,7 @@
     <!-- APP BAR         -->
     <v-app-bar
         app
-        color="amber darken-3"
+        color="orange darken-3"
         dark
     >
         <v-toolbar-title
