@@ -9,8 +9,20 @@
         >
             Contactanos
         </h2>
+
+        <v-alert
+            dense
+            text
+            :type="typeAlert"
+            v-model="stateAlert"
+            v-show="stateAlert"
+        >
+            {{msj}}
+        </v-alert>
        
-            <v-row>
+            <v-row
+                class="px-5"
+            >
                 <v-col
                     cols="12"
                     md=""
@@ -70,8 +82,9 @@ export default {
     data(){
         return{
             valid: true,
-            success: false,
-            error:false,
+            typeAlert:'',
+            stateAlert:false,
+            msj:'',
             firstname: '',
             lastname: '',
             email: '',
@@ -87,15 +100,19 @@ export default {
         }
     },
     methods:{
-        validate() {
-            this.$refs.form.validate();
-        },
         enviarForm(){
-            this.validate
-            if(this.validate()){
-
-                console.log('Enviado')
+            this.$refs.form.validate()
+            if(!this.valid){
+                console.log('error')
+                this.stateAlert = true
+                this.typeAlert = 'error'
+                this.msj = 'Error al enviar el mensaje'
                 
+            }else{
+                console.log('Enviado')
+                this.stateAlert = true
+                this.typeAlert = 'success'
+                this.msj = 'Mensaje enviado correctamente'
             }
             
         }

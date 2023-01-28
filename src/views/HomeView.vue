@@ -10,6 +10,12 @@
       class="pa-0">
       <vitrina/>
     </v-col>
+<!-- VITRINA EQUIPOS -->
+    <v-col
+      cols="12"
+      class="pa-0">
+      <vitrina-equipos :equipos="equipos"/>
+    </v-col>
 <!-- PLANES -->
     <v-col
       cols="12"
@@ -40,6 +46,8 @@ import FormularioHome from '../components/FormularioHome.vue'
 import OpinionesCard from '../components/OpinionesCard.vue'
 import PlanesHome from '../components/PlanesHome.vue'
 import Vitrina from '../components/Vitrina.vue'
+import VitrinaEquipos from '../components/VitrinaEquipos.vue'
+import {mapActions, mapGetters} from 'vuex'
   
 
   export default {
@@ -48,7 +56,8 @@ import Vitrina from '../components/Vitrina.vue'
         Vitrina,
         OpinionesCard,
         PlanesHome,
-        FormularioHome
+        FormularioHome,
+        VitrinaEquipos
     },
     data(){
       return{
@@ -56,14 +65,21 @@ import Vitrina from '../components/Vitrina.vue'
       }
     },
     computed:{
+      ...mapGetters(['getEquipos']),
       opiniones(){
         return this.dataHome.opiniones
       },
       planes(){
         return this.dataHome.planes
+      },
+      equipos(){
+        return this.getEquipos.productos
       }
+      
     },
     methods:{
+      ...mapActions(['fetchEquipos']),
+
       async fetchHomeInfo(){
         try {
           const res = await fetch('/home.json')
@@ -73,10 +89,12 @@ import Vitrina from '../components/Vitrina.vue'
         } catch (error) {
           console.log(error)
         }
-      }
+      },
+      
     },
     created(){
       this.fetchHomeInfo()
+      this.fetchEquipos()
     }
   }
 </script>
