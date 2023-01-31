@@ -10,17 +10,25 @@
       class="pa-0">
       <vitrina/>
     </v-col>
-<!-- VITRINA EQUIPOS -->
-    <v-col
-      cols="12"
-      class="pa-0">
-      <vitrina-equipos :equipos="equipos"/>
-    </v-col>
+
 <!-- PLANES -->
     <v-col
       cols="12"
     >
       <planes-home :planes="planes" />
+    </v-col>
+<!-- VITRINA EQUIPOS -->
+    <v-col
+      cols="12"
+      class="pa-0">
+      <vitrina-equipos :equipos="equipos"/>
+      <v-btn
+        class="float-right mt-5 me-5"
+        dark
+        text
+      >
+        Ver Más
+      </v-btn>
     </v-col>
 <!-- RESEÑA -->
     <v-col
