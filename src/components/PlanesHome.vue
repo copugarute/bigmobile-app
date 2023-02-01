@@ -7,11 +7,6 @@
             interval="4000"
             dark
         >
-        <h1 
-            class="text-h4 text-center white--text font-weight-regular my-5"
-        >
-            Planes Flexibles
-        </h1>
         <v-carousel-transition
                 group
             >
