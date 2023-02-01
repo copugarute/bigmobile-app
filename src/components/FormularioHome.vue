@@ -4,12 +4,7 @@
         v-model="valid"
         lazy-validation
     >
-        <h2
-            class="text-h4 text-center white--text font-weight-regular mt-10 mb-5"
-        >
-            Contactanos
-        </h2>
-
+         <!-- ALERT -->
         <v-alert
             dense
             text
@@ -27,6 +22,7 @@
                     cols="12"
                     md=""
                 >
+                <!-- INPUT NOMBRE -->
                     <v-text-field
                         v-model="firstname"
                         :rules="nameRules"
@@ -40,6 +36,7 @@
                     cols="12"
                     md=""
                 >
+                     <!-- INPUT APELLIDO -->
                     <v-text-field
                         v-model="lastname"
                         :rules="nameRules"
@@ -53,6 +50,7 @@
                     cols="12"
                     md=""
                 >
+                     <!-- INPUT EMAIL -->
                     <v-text-field
                         v-model="email"
                         :rules="emailRules"
@@ -62,6 +60,7 @@
                     ></v-text-field>
                 </v-col>
                 <v-col>
+                     <!-- BOTON -->
                     <v-btn
                         outlined
                         block

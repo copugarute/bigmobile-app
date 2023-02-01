@@ -12,6 +12,7 @@
         height="50%"
         width="100%"
     >
+        <!-- ITEMS DRAWER -->
         <v-list nav dark>
             <v-list-item-group
                 v-model="group"
@@ -34,7 +35,8 @@
             </v-list-item-group>
         </v-list>
     </v-navigation-drawer>
-    <!-- APP BAR         -->
+
+    <!-- MENU MD-LG-XL -->
     <v-app-bar
         app
         color="orange darken-3"
@@ -48,6 +50,7 @@
 
         <v-spacer></v-spacer>
         
+        <!-- ITEMS NAV -->
         <v-toolbar-items
             v-for="route in routes"
             :key="route.name"

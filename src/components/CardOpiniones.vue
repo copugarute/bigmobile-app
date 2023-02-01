@@ -1,27 +1,5 @@
 <template>
-  <v-carousel
-    height="300"
-    hide-delimiter-background
-    :show-arrows="false"
-    cycle
-    interval="4000"
-    dark
-  >
-    <h1 
-      class="text-center text-h4 white--text font-weight-regular mt-10 mb-5"
-    >
-      Que dicen de Nosotros
-    </h1>
-    <v-carousel-transition
-      group
-    >
-    <v-carousel-item
-      class="carousel-item"
-      v-for="(opinion,index) in opiniones" 
-      :key="index"
-      transition="true"
-    >
-      <v-card
+   <v-card
         class="mx-auto my-2 pa-2 text-center"
         max-width="400"
         max-height="150"
@@ -31,6 +9,8 @@
         
       >
         <v-row class="mx-5">
+
+<!-- AVATAR -->
           <v-col
             cols="3"
             align-self="center"
@@ -42,6 +22,8 @@
               <span class="white--text text-h5">{{opinion.iniciales}}</span>
             </v-avatar>
           </v-col>
+
+<!-- TEXTO -->
           <v-col
             cols="9"
             class="text-center"
@@ -52,23 +34,15 @@
         </v-row>
         
       </v-card>
-    </v-carousel-item>
-    </v-carousel-transition>
-  </v-carousel>
 </template>
 
 <script>
 export default {
-  name:'OpinionesCard',
-  props:{
-    opiniones:{
-      type:Array,
-      required:true
-    }
-  }
-
+    name:'CardOpiniones',
+    props:['opinion']
 }
 </script>
 
 <style>
+
 </style>

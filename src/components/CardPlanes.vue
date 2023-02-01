@@ -7,11 +7,13 @@
         dark
         elevation="0"
     >
+<!-- ICONO -->
         <v-icon
             x-large
             class="mt-2"
         >{{plan.icono}}
         </v-icon>
+<!-- TEXTO         -->
         <h2 
             class="text-h5 pa-2"
         >
