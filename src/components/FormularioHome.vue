@@ -20,7 +20,6 @@
             >
                 <v-col
                     cols="12"
-                    md=""
                 >
                 <!-- INPUT NOMBRE -->
                     <v-text-field
@@ -34,7 +33,6 @@
 
                 <v-col
                     cols="12"
-                    md=""
                 >
                      <!-- INPUT APELLIDO -->
                     <v-text-field
@@ -48,7 +46,6 @@
 
                 <v-col
                     cols="12"
-                    md=""
                 >
                      <!-- INPUT EMAIL -->
                     <v-text-field
@@ -59,7 +56,9 @@
                         dark
                     ></v-text-field>
                 </v-col>
-                <v-col>
+                <v-col
+                    cols="12"
+                >
                      <!-- BOTON -->
                     <v-btn
                         outlined

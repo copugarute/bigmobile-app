@@ -3,18 +3,20 @@
     fluid
     class="amber darken-3"
   >
+<!-- VITRINA -->  
     <v-row justify="center">
-<!-- VITRINA -->
       <v-col
         cols="12"
         class="pa-0"
       >
         <vitrina/>
       </v-col>
+    </v-row>
 
 <!-- PLANES -->
+    <v-row justify="center">
 
-    <!-- TITULO SECCION -->
+    <!-- TITULO PLANES -->
       <v-col
         cols="12"
       >
@@ -43,10 +45,12 @@
       >
         <card-planes :plan="plan" />
       </v-col>
-    
-<!-- EQUIPOS -->
+    </v-row>
 
-    <!-- TITULO SECCION -->
+<!-- EQUIPOS -->
+    <v-row justify="center">
+  
+      <!-- TITULO EQUIPOS -->
       <v-col
         cols="12"
       >
@@ -60,15 +64,22 @@
 <!-- EQUIPOS xs-->
       <v-col
         cols="12"
-        class="pa-0"
+        class="pa-0 d-sm-none"
       >
         <SliderEquipos :equipos="equipos" />
       </v-col>
 
-<!-- EQUIPOS sm - md - lg - xl-->      
-    <!-- <card-equipos /> -->
-
-<!-- EQUIPOS BOTON-->
+<!-- EQUIPOS sm - md - lg - xl-->
+      <v-col
+        cols="12"
+        sm="4"
+        class="d-none d-sm-flex"
+        v-for="(equipo,index) in equipos"
+        :key="index"
+      >
+        <card-equipos :equipo="equipo"/>
+      </v-col>
+      <!-- EQUIPOS BOTON-->
       <v-col>
         <v-btn
           class="float-right mt-5 me-5"
@@ -79,11 +90,17 @@
           Ver Más
         </v-btn>
       </v-col>
+    
+    </v-row>
 
-<!-- RESEÑA -->
 
-    <!-- TITULO SECCION -->
-      <v-col>
+<!-- RESEÑAS -->
+    <v-row justify="center">
+  
+    <!-- TITULO RESEÑAS -->
+      <v-col
+        cols="12"
+      >
         <h1 
           class="text-center text-h4 white--text font-weight-regular mt-10 mb-5"
         >
@@ -93,13 +110,25 @@
 <!-- RESEÑA xs-->      
       <v-col
         cols="12"
+        class="d-sm-none"
       >
         <SliderOpiniones :opiniones="opiniones"/>
       </v-col>
 
-<!-- RESEÑA sm - md - lg - xl-->
+<!-- RESEÑAS sm - md - lg - xl-->
+      <v-col
+        cols="12"
+        sm="4"
+        class="d-none d-sm-flex"
+        v-for="(opinion,index) in opiniones"
+        :key="index"
+      >
+        <card-opiniones :opinion="opinion" />
+      </v-col>
+    </v-row>
 
 <!-- CONTACTO -->
+    <v-row justify="center">
       <h2
               class="text-h4 text-center white--text font-weight-regular mt-10 mb-5"
           >
@@ -122,11 +151,12 @@ import SliderOpiniones from '../components/SliderOpiniones.vue'
 import SliderPlanes from '../components/SliderPlanes.vue'
 import Vitrina from '../components/Vitrina.vue'
 import SliderEquipos from '../components/SliderEquipos.vue'
-// import CardEquipos from '../components/CardEquipos.vue'
+import CardEquipos from '../components/CardEquipos.vue'
 import CardPlanes from '../components/CardPlanes.vue'
 
 // MAPS
 import {mapActions, mapGetters} from 'vuex'
+import CardOpiniones from '../components/CardOpiniones.vue'
 
   
 
@@ -138,8 +168,9 @@ import {mapActions, mapGetters} from 'vuex'
         SliderPlanes,
         FormularioHome,
         SliderEquipos,
-        // CardEquipos,
-        CardPlanes
+        CardEquipos,
+        CardPlanes,
+        CardOpiniones
     },
     data(){
       return{
