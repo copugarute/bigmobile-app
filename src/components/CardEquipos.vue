@@ -1,7 +1,7 @@
 <template>
   <v-card
     class="mx-auto rounded-lg"
-    max-width="344"
+    max-width="300"
     max-height="600"
     elevation="2"
     outlined
@@ -27,11 +27,11 @@
 
 <!-- PRECIO CARD -->
     <v-card-subtitle
-      class="text-subtitle-1 font-weight-light ms-5"
+      class="text-subtitle-1 font-weight-light ms-3"
     >
       Antes: ${{Number(equipo.precio_normal).toLocaleString('es-cl')}}
       <span  
-      class="text-subtitle-1 font-weight-light orange--text text--darken-3 ms-5"
+      class="text-subtitle-1 font-weight-light orange--text text--darken-3 ms-3"
       > Ahora: ${{Number(equipo.precio_promo).toLocaleString('es-cl')}} </span>
     </v-card-subtitle>
 
@@ -41,7 +41,6 @@
         color="orange darken-3"
         dark
         block
-        @click="redirectTo()"
       >
         Más
       </v-btn>
@@ -54,11 +53,6 @@
 export default {
   name:'CardEquipos',
   props:['equipo'],
-  methods:{
-    redirectTo(){
-        this.$router.push('/productos')
-      },
-  },
 }
 </script>
 

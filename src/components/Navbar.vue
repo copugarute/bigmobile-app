@@ -43,7 +43,7 @@
         dark
     >
         <v-toolbar-title
-            class="font-weight-black text-title"
+            class="text-lg-h4 font-weight-black text-title"
         >
         BIGMOBILE
         </v-toolbar-title>
@@ -60,7 +60,7 @@
                 text
                 :disabled="currentRoute == route.name"
                 :to="route.path"
-                class="p-2"
+                class="p-2 text-lg-h6"
             >
                 {{route.title}}
             </v-btn>

@@ -6,7 +6,7 @@
     cycle
     interval="4000"
     dark
-    height="730"
+    height="600"
   > 
     <v-carousel-transition
       group

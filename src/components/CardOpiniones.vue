@@ -2,18 +2,20 @@
    <v-card
         class="mx-auto my-2 pa-2 text-center"
         max-width="400"
-        max-height="150"
+        max-height="250"
         color=""
         light
         shaped
         
       >
-        <v-row class="mx-5">
+        <v-row justify="center" class="mx-5">
 
 <!-- AVATAR -->
           <v-col
-            cols="3"
+            cols="2"
             align-self="center"
+            class="me-5"
+
           >
             <v-avatar
               color="yellow darken-3"
@@ -28,8 +30,8 @@
             cols="9"
             class="text-center"
           >
-            <p class="ma-0 pt-2 text-h6 yellow--text text--darken-3"> {{opinion.nombre}} </p>
-            <p class="text-subtitle-1 pa-2"> "{{opinion.texto}}" </p>
+            <p class="ma-0 pt-2 text-h6 text-lg-h4 yellow--text text--darken-3"> {{opinion.nombre}} </p>
+            <p class="text-lg-h5 text-subtitle-1 pa-2"> "{{opinion.texto}}" </p>
           </v-col>
         </v-row>
         

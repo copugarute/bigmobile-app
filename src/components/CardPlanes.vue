@@ -15,12 +15,12 @@
         </v-icon>
 <!-- TEXTO         -->
         <h2 
-            class="text-h5 pa-2"
+            class="text-h5 text-lg-h4 pa-2"
         >
             {{plan.titulo}}
         </h2>
         <v-card-subtitle
-            class="pa-2"
+            class="pa-2 text-lg-h5"
         >
             {{plan.texto}}
         </v-card-subtitle>

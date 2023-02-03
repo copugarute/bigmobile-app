@@ -4,7 +4,10 @@
     class="amber darken-3"
   >
 <!-- VITRINA -->  
-    <v-row justify="center">
+    <v-row 
+      justify="center"
+      class="mb-6"
+    >
       <v-col
         cols="12"
         class="pa-0"
@@ -14,14 +17,18 @@
     </v-row>
 
 <!-- PLANES -->
-    <v-row justify="center">
+    <v-row 
+      justify="center"
+      class="my-8 my-lg-10"
+      >
 
     <!-- TITULO PLANES -->
       <v-col
         cols="12"
+        class="my-5 my-lg-10"
       >
         <h1 
-          class="text-h4 text-center white--text font-weight-regular my-5"
+          class="text-h4 text-lg-h3 text-center white--text font-weight-regular my-5"
         >
           Planes Flexibles
         </h1>
@@ -48,14 +55,18 @@
     </v-row>
 
 <!-- EQUIPOS -->
-    <v-row justify="center">
+    <v-row  
+      justify="center"
+      class="my-8 my-lg-10"
+      >
   
       <!-- TITULO EQUIPOS -->
       <v-col
         cols="12"
+        class="my-5 my-lg-10"
       >
         <h1 
-          class="text-h4 text-center white--text font-weight-regular my-5"
+          class="text-h4 text-lg-h3 text-center white--text font-weight-regular my-5"
         >
           Renueva tu equipo
         </h1>
@@ -72,7 +83,9 @@
 <!-- EQUIPOS sm - md - lg - xl-->
       <v-col
         cols="12"
-        sm="4"
+        sm="6"
+        md="4"
+        lg="3"
         class="d-none d-sm-flex"
         v-for="(equipo,index) in equipos"
         :key="index"
@@ -80,9 +93,12 @@
         <card-equipos :equipo="equipo"/>
       </v-col>
       <!-- EQUIPOS BOTON-->
-      <v-col>
+      <v-col
+        cols="12"
+      >
         <v-btn
-          class="float-right mt-5 me-5"
+          class="float-right mt-5 me-5 text-lg-h5"
+          x-large
           dark
           text
           @click="redirectTo()"
@@ -95,14 +111,18 @@
 
 
 <!-- RESEÑAS -->
-    <v-row justify="center">
+    <v-row 
+      justify="center"
+      class="my-8 my-lg-10"
+    >
   
     <!-- TITULO RESEÑAS -->
       <v-col
         cols="12"
+        class="my-5 my-lg-10"
       >
         <h1 
-          class="text-center text-h4 white--text font-weight-regular mt-10 mb-5"
+          class="text-h4 text-lg-h3 text-center  white--text font-weight-regular mt-10 mb-5"
         >
           Que dicen de Nosotros
         </h1>
@@ -128,14 +148,24 @@
     </v-row>
 
 <!-- CONTACTO -->
-    <v-row justify="center">
-      <h2
-              class="text-h4 text-center white--text font-weight-regular mt-10 mb-5"
+    <v-row 
+      justify="center"
+      class="my-8 my-lg-10"
+      >
+      <v-col
+        cols="12"
+        class="my-5 my-lg-10"
+      >
+        <h2
+              class="text-h4 text-lg-h3 text-center white--text font-weight-regular mt-10 mb-5"
           >
               Contactanos
       </h2>
+      </v-col>
+      
       <v-col
-        cols="12"
+        cols="10"
+        sm="6"
       >
         <formulario-home />
       </v-col>
@@ -202,6 +232,9 @@ import CardOpiniones from '../components/CardOpiniones.vue'
         } catch (error) {
           console.log(error)
         }
+      },
+      redirectTo(){
+        this.$router.push('/productos')
       },
       
       
