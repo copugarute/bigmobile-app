@@ -16,7 +16,10 @@
           icon
           dark
         >
-          <v-icon size="24px">
+          <v-icon 
+            size="24px"
+            x-large
+          >
             {{ icon }}
           </v-icon>
         </v-btn>

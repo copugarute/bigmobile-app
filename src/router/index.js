@@ -29,9 +29,9 @@ const routes = [
     component: Checkout
   },
   {
-    path: '/productos',
-    name: 'Productos',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Productos.vue')
+    path: '/equipos',
+    name: 'Equipos',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Equipos.vue')
   },
   {
     path: '/planes',

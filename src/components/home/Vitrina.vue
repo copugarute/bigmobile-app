@@ -4,7 +4,7 @@
       max-height="60vh"
       max-width="100%"
       min-height="50vh"
-      src="../assets/BANNER-DESKTOP.jpg"
+      src="../../assets/BANNER-DESKTOP.jpg"
     ></v-img>
     <!-- <v-img
       srcset="BANNER-MOBILE.jpg 600w,

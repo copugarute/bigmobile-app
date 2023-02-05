@@ -6,15 +6,23 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     equipos: '',
+    query:''
   },
   getters: {
-    getEquipos(state){
+    getEquipos (state) {
       return state.equipos
-    }
+    },
+    equiposFiltrados (state) {
+      let equiposFiltrados = state.equipos.filter( equipo => equipo.nombre.toLowerCase().includes(state.filter.query) )
+      return equiposFiltrados
+    },   
   },
   mutations: {
-    SET_EQUIPOS(state, equipos){
+    SET_EQUIPOS (state, equipos) {
       state.equipos = equipos
+    },
+    SET_QUERY (state, query) {
+      state.query = query 
     }
   },
   actions: {

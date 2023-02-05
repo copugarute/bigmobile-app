@@ -1,7 +1,7 @@
 <template>
   <v-container 
     fluid
-    class="amber darken-3"
+    class=""
   >
 <!-- VITRINA -->  
     <v-row 
@@ -28,7 +28,7 @@
         class="my-5 my-lg-10"
       >
         <h1 
-          class="text-h4 text-lg-h3 text-center white--text font-weight-regular my-5"
+          class="text-h4 text-lg-h3 text-center font-weight-regular my-5 amber--text darken-3"
         >
           Planes Flexibles
         </h1>
@@ -66,7 +66,7 @@
         class="my-5 my-lg-10"
       >
         <h1 
-          class="text-h4 text-lg-h3 text-center white--text font-weight-regular my-5"
+          class="text-h4 text-lg-h3 text-center amber--text darken-3 font-weight-regular my-5"
         >
           Renueva tu equipo
         </h1>
@@ -99,7 +99,7 @@
         <v-btn
           class="float-right mt-5 me-5 text-lg-h5"
           x-large
-          dark
+          color="amber darken-3"
           text
           @click="redirectTo()"
         >
@@ -122,7 +122,7 @@
         class="my-5 my-lg-10"
       >
         <h1 
-          class="text-h4 text-lg-h3 text-center  white--text font-weight-regular mt-10 mb-5"
+          class="text-h4 text-lg-h3 text-center  amber--text darken-3 font-weight-regular mt-10 mb-5"
         >
           Que dicen de Nosotros
         </h1>
@@ -150,14 +150,14 @@
 <!-- CONTACTO -->
     <v-row 
       justify="center"
-      class="my-8 my-lg-10"
+      class="my-8 my-lg-10 "
       >
       <v-col
         cols="12"
         class="my-5 my-lg-10"
       >
         <h2
-              class="text-h4 text-lg-h3 text-center white--text font-weight-regular mt-10 mb-5"
+              class="text-h4 text-lg-h3 text-center amber--text darken-3 font-weight-regular mt-10 mb-5"
           >
               Contactanos
       </h2>
@@ -166,6 +166,7 @@
       <v-col
         cols="10"
         sm="6"
+        class="amber darken-3 rounded-lg"
       >
         <formulario-home />
       </v-col>
@@ -176,17 +177,17 @@
 <script>
 
 // IMPORTACIÓN DE COMPONENTES
-import FormularioHome from '../components/FormularioHome.vue'
-import SliderOpiniones from '../components/SliderOpiniones.vue'
-import SliderPlanes from '../components/SliderPlanes.vue'
-import Vitrina from '../components/Vitrina.vue'
-import SliderEquipos from '../components/SliderEquipos.vue'
-import CardEquipos from '../components/CardEquipos.vue'
-import CardPlanes from '../components/CardPlanes.vue'
+import FormularioHome from '../components/home/FormularioHome.vue'
+import SliderOpiniones from '../components/home/SliderOpiniones.vue'
+import SliderPlanes from '../components/home/SliderPlanes.vue'
+import Vitrina from '../components/home/Vitrina.vue'
+import SliderEquipos from '../components/home/SliderEquipos.vue'
+import CardEquipos from '../components/home/CardEquipos.vue'
+import CardPlanes from '../components/home/CardPlanes.vue'
 
 // MAPS
 import {mapActions, mapGetters} from 'vuex'
-import CardOpiniones from '../components/CardOpiniones.vue'
+import CardOpiniones from '../components/home/CardOpiniones.vue'
 
   
 
@@ -234,7 +235,7 @@ import CardOpiniones from '../components/CardOpiniones.vue'
         }
       },
       redirectTo(){
-        this.$router.push('/productos')
+        this.$router.push('/equipos')
       },
       
       

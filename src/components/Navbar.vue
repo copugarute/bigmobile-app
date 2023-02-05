@@ -87,7 +87,7 @@ export default {
             group: null,
             routes:[
                 { name:'Home', path: '/',title:'Home'},
-                { name:'Productos', path: '/productos',title:'Equipos y accesorios'},
+                { name:'Equipos', path: '/equipos',title:'Equipos y accesorios'},
                 { name:'Planes', path: '/planes', title:'Planes'},
                 { name:'Prepago', path: '/prepago', title:'Prepagos'},
                 { name:'Oficina', path: '/oficina', title:'Oficina Virtual'},

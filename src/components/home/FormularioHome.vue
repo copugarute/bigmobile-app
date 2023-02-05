@@ -3,6 +3,7 @@
         ref="form" 
         v-model="valid"
         lazy-validation
+        class="mb-10"
     >
          <!-- ALERT -->
         <v-alert
@@ -41,6 +42,7 @@
                         label="Apellido"
                         required
                         dark
+                        class=""
                     ></v-text-field>
                 </v-col>
 
