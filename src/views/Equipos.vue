@@ -1,20 +1,23 @@
 <template>
   <v-container fluid>
+
       <!-- TITULO -->
     <v-row
       justify="center"
       class=""
     >
-      <!-- <v-col
+      <v-col
         cols="12"
-        class="my-5 my-lg-10"
+        class="yellow darken-3"
+        color=""
       >
         <h1 
-          class="text-h4 text-lg-h3 text-center font-weight-regular my-5 amber--text darken-3"
+          class="text-h4 text-lg-h3 text-center white--text font-weight-regular my-5 "
         >
           Equipos
         </h1>
-      </v-col> -->
+      </v-col>
+
         <!-- BANNER BUSQUEDA - FILTRO - ORDEN -->
       <v-col
         cols="12"
@@ -23,9 +26,6 @@
         <buscador :equipos="equipos"/>
       </v-col>
     </v-row>
-    
-    
-    <!-- CARDS PRODUCTOS -->
 
   </v-container>
 </template>

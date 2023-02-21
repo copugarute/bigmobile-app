@@ -90,7 +90,7 @@
         v-for="(equipo,index) in equipos"
         :key="index"
       >
-        <card-equipos :equipo="equipo"/>
+          <card-equipos :equipo="equipo"/>
       </v-col>
       <!-- EQUIPOS BOTON-->
       <v-col

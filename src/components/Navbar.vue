@@ -6,7 +6,7 @@
         app
         fixed
         temporary
-        overlay-opacity="0"
+        overlay-opacity="0.5"
         :style="`margin-top: ${$vuetify.application.top}px`"
         color="amber darken-3"
         height="50%"
