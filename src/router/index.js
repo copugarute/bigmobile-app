@@ -1,13 +1,20 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/HomeView.vue'
-import Checkout from '../views/Checkout.vue'
+// import Checkout from '../views/Checkout.vue'
 import Confirm from '../views/Confirm.vue'
 import Login from '../views/Login.vue'
+import Notfound from '../views/Notfound.vue'
+import Mantencion from '../views/Mantencion.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
+  {
+    path: '*',
+    name: 'Notfound',
+    component: Notfound
+  },
   {
     path: '/',
     name: 'Home',
@@ -26,7 +33,7 @@ const routes = [
   {
     path: '/checkout',
     name: 'Checkout',
-    component: Checkout
+    component: Mantencion
   },
   {
     path: '/equipos',
@@ -36,17 +43,19 @@ const routes = [
   {
     path: '/planes',
     name: 'Planes',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Planes.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/Mantencion.vue'),
+    redirect: '/'
   },
   {
     path: '/prepago',
     name: 'Prepago',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Prepago.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/Mantencion.vue'),
+    redirect: '/'
   },
   {
     path: '/oficina',
     name: 'Oficina',
-    component: () => import(/* webpackChunkName: "about" */ '../views/OficinaVirtual.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/Mantencion.vue'),
   },
 ]
 
