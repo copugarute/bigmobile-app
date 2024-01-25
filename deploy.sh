@@ -15,6 +15,6 @@ git init
 git add -A
 git commit -m "deploy"
 
-git push -f https://github.com/copugarute/bigmobile-app.git main
+git push -f https://github.com/copugarute/bigmobile-app.git master
 
 cd -

@@ -28,14 +28,17 @@ export default new Vuex.Store({
   actions: {
     async fetchEquipos({commit}){
       try {
-        let res = await fetch('/equipos.json')
-        if(!res.ok) throw('Error Api')
+        let res = await fetch('https://copugarute.github.io/bigmobile-app/equipos.json')
+        if(!res.ok) {
+          throw new Error(`Error en la respuesta de la API: ${res.status} - ${res.statusText}`)
+        }
+        
         let equipos = await res.json()
         console.log(equipos)
         commit('SET_EQUIPOS', equipos)
         
       } catch (error) {
-        console.log(error)
+        console.log('Error al obtener equipos:', error)
       } 
     }
   },

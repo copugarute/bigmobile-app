@@ -226,12 +226,14 @@ import CardOpiniones from '../components/home/CardOpiniones.vue'
 
       async fetchHomeInfo(){
         try {
-          const res = await fetch('/home.json')
-          if(!res.ok) throw('Error en Api')
+          const res = await fetch('https://copugarute.github.io/bigmobile-app/home.json')
+          if(!res.ok) {
+            throw new Error(`Error en la respuesta de la API: ${res.status} - ${res.statusText}`)
+          }
           this.dataHome = await res.json()
           console.log(this.dataHome)
         } catch (error) {
-          console.log(error)
+          console.error('Error al obtener información de inicio:', error);
         }
       },
       redirectTo(){
